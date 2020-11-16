@@ -1,0 +1,43 @@
+{
+  "name": "vef1-2020-h2",
+  "version": "1.0.0",
+  "description": "Verkefnið felst í því að smíða vef lítinn myndbandavef sem nýtir gögn úr JSON skrá.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass --source-map-embed styles.scss styles.css",
+    "sass-watch": "node-sass --source-map-embed --watch styles.scss --recursive styles.css",
+    "lint": "stylelint styles.scss ./**/*.scss",
+    "rollup": "rollup -c",
+    "rollup-watch": "rollup -c -w",
+    "browser-sync": "browser-sync start --server --files index.html ./styles.css ./dist/bundle.js",
+    "dev": "concurrently npm:browser-sync npm:rollup-watch",
+    "test": "eslint *.js **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siljaros1994/vef1-2020-h2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siljaros1994/vef1-2020-h2/issues"
+  },
+  "homepage": "https://github.com/siljaros1994/vef1-2020-h2",
+  "keywords": [],
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "browser-sync": "^2.26.13",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "rollup": "^2.32.1",
+    "rollup-plugin-babel": "^4.4.0"
+  },
+  "dependencies": {}
+}
