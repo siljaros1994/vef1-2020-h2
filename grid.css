@@ -7,6 +7,7 @@
 h1{
   text-align: center;
   padding-top: 15px;
+  font-size: 41px;
 }
 
   .row {
@@ -47,6 +48,45 @@ h1{
     margin-left: 8.333333333%;
   }
 
+  @media only screen and (max-width: 500px) {
+    .col-md-1 {
+      width: 8.333333333%;
+    }
+
+    .col-md-2 {
+      width: 16.66666667%;
+    }
+
+    .col-md-3 {
+      width: 25%;
+    }
+
+    .col-md-4 {
+      width: 33.33333%;
+    }
+
+    .col-md-10{
+      width: 83.33333333%;
+    }
+
+    .offset-col-md-1 {
+      margin-left: 8.333333333%;
+    }
+    .offset-col-md-2 {
+      margin-left: 16.66666667%;
+    }
+
+    hr {
+      max-width: 22rem;
+    }
+
+    .video_duration {
+      bottom: 9px;
+      left: 363px;
+    }
+
+  }
+
   /*
 Global stílar
 */
@@ -81,7 +121,7 @@ h2 {
 
 .video_title {
   font-weight: bold;
-  width: 84%;
+  width: 26rem;
   line-height: 1.5rem;
   margin-top: 10px;
 }
@@ -100,7 +140,7 @@ footer p{
 img {
   position: relative;
   display: flex;
-  width: 90%;
+  width: 26rem;
   height: auto;
 }
 
@@ -118,7 +158,13 @@ img {
   color: #dddddd;
   width: 13%;
   padding: 2px;
-  bottom: 7px;
-  right: 45px;
+  bottom: 9px;
+  right: 4px;
 }
+
+@media only screen and (max-width: 500px) {
+
+
+}
+
 
