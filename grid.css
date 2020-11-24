@@ -6,6 +6,7 @@
 
 h1{
   text-align: center;
+  padding-top: 15px;
 }
 
   .row {
@@ -70,7 +71,8 @@ h1 {
 
 h2 {
   hyphens: manual;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  padding-top: 4px;
 }
 
 .row {
@@ -79,11 +81,14 @@ h2 {
 
 .video_title {
   font-weight: bold;
+  width: 84%;
+  line-height: 1.5rem;
+  margin-top: 10px;
 }
 
 hr {
   margin: 0 auto;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 
@@ -93,6 +98,27 @@ footer p{
 }
 
 img {
+  position: relative;
+  display: flex;
   width: 90%;
   height: auto;
 }
+
+.video_image {
+  position: relative;
+  display: flex;
+  width: 90%;
+  height: auto;
+}
+
+.video_duration {
+  position: absolute;
+  background: rgba(95,95,95, 0.7);
+  text-align: center;
+  color: #dddddd;
+  width: 13%;
+  padding: 2px;
+  bottom: 7px;
+  right: 45px;
+}
+

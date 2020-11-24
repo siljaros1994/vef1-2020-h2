@@ -53,6 +53,22 @@ window.onload = function () {
         const bottomCard = document.createElement('div');
         bottomCard.setAttribute('class', 'bottom_card');
 
+        //duration
+        const videoDuration = document.createElement('p');
+        videoDuration.setAttribute('class', 'video_duration col-4');
+
+        const minutes = parseInt(video.duration / 60, 10);
+
+        const seconds = video.duration % 60;
+
+        if (seconds<=9) {
+          videoDuration.innerHTML = `${parseInt(minutes)}:0${parseInt(seconds)}`;
+        } else{
+          videoDuration.innerHTML = `${parseInt(minutes)}:${parseInt(seconds)}`;
+        }
+
+        videoImage.appendChild(videoDuration);
+
         //setur videotitle þar sem þeir eiga að vera
         const videoTitle = document.createElement('p');
         videoTitle.setAttribute('class', 'video_title');
@@ -66,14 +82,31 @@ window.onload = function () {
         const hoursSince = ((new Date()).getTime() - videoDate.getTime()) / 1000 / 60 / 60;
         const daysSince = hoursSince / 24
         const monthsSince = daysSince / 30;
+        const yearSince = daysSince / 365;
         if (monthsSince >= 1) {
-          detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuðum síðan`;
+          if (monthsSince < 2) {
+            detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuði síðan`;
+          } else{
+            detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuðum síðan`;
+          }
         } else if (daysSince >= 1) {
-          detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} dögum síðan`;
+          if (daysSince < 2){
+            detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} degi síðan`;
+          } else {
+            detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} dögum síðan`;
+          }
+        } else if (hoursSince >= 1){
+          if (hoursSince<2){
+          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustund síðan`;
+          } else {
+          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustundum síðan`;
+          }
         } else {
-          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustundum síðan
-
-          `;
+          if (yearSince<2){
+            detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} ári síðan`;
+          } else {
+            detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} árum síðan`;
+          }
         }
 
         bottomCard.appendChild(detailElement);
