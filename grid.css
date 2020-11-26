@@ -140,9 +140,29 @@ hr {
   margin: 2rem 0;
 }
 
+.playBtn {
+  top: 25%;
+  right: 45%;
+  position: absolute;
+  display: flex;
+  height: 10%;
+  width: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.playtBtn-hidden {
+  display: none;
+}
+
 footer p{
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.video_image_pc {
+  height: 100%;
+  width: 100%; 
 }
 
 .video_image img {
