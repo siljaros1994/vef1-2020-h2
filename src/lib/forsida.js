@@ -27,7 +27,7 @@ window.onload = function () {
       categoryElement.setAttribute('class', category.title.toLowerCase().replace(' ', '_'));
 
       const categoryTitle = document.createElement('h2');
-      categoryTitle.innerHTML = category.title;
+      categoryTitle.innerText= category.title;
 
       categoryElement.appendChild(categoryTitle);
 
@@ -42,8 +42,9 @@ window.onload = function () {
         videoElement.setAttribute('class', 'col col-4 col-md-10');
 
         //setur poster þar sem þau eiga að vera
-        const videoImage = document.createElement('div');
+        const videoImage = document.createElement('a');
         videoImage.setAttribute('class', 'video_image')
+        videoImage.setAttribute('href', '/video.html?id=' + video.id)
         const videoImageImg = document.createElement('img');
         videoImageImg.setAttribute('src', video.poster);
         videoImage.appendChild(videoImageImg);
