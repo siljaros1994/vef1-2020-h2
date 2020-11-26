@@ -10,10 +10,12 @@ function videoPlayPause() {
   if (myVideo.paused) {
     myVideo.play();
     document.getElementById("play_pause").src="img/pause.svg"; 
+    document.getElementById("playBtn").classList.add("playtBtn-hidden");
   }
   else {
     myVideo.pause(); 
     document.getElementById("play_pause").src="img/play.svg";
+    document.getElementById("playBtn").classList.remove("playtBtn-hidden");
   }
 } 
 function videoMute(){
