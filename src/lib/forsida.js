@@ -1,4 +1,4 @@
-//kallar í videos.json dataið
+// Nær í videos.json og keyrir callback fall
 function getData(callback) {
   fetch('/videos.json')
     .then(function (res) {
@@ -10,39 +10,39 @@ function getData(callback) {
     .catch(console.log)
 }
 
-//kallar á gögn þegar html (document) hefur loadast
+// Kallar á gögn þegar html (document) hefur loadast
 window.onload = function () {
-  getData(function (gögn) {
+
+  getData(function (data) {
     const gridElement = document.getElementById('theGrid');
 
-    console.log('Gögn', gögn);
-
-    //loopar og finnur title í categories
-    for (let i = 0; i < gögn.categories.length; i++) {
-      const category = gögn.categories[i];
+    // Loopar og finnur title í categories
+    for (let i = 0; i < data.categories.length; i++) {
+      const category = data.categories[i];
       const videoIDs = category.videos;
-      const categoryVideos = gögn.videos.filter(video => videoIDs.includes(video.id));
+      const categoryVideos = data.videos.filter(video => videoIDs.includes(video.id));
 
       const categoryElement = document.createElement('section');
       categoryElement.setAttribute('class', category.title.toLowerCase().replace(' ', '_'));
 
       const categoryTitle = document.createElement('h2');
-      categoryTitle.innerText= category.title;
+      categoryTitle.setAttribute('class', 'offset-col-md-1');
+      categoryTitle.innerHTML = category.title;
 
       categoryElement.appendChild(categoryTitle);
 
       const videosElement = document.createElement('div');
       videosElement.setAttribute('class', 'row');
 
-      //loopar í gegnum categories til að finna video
+      // Loopar í gegnum categories til að finna video
       for (let j = 0; j < categoryVideos.length; j++) {
         const video = categoryVideos[j];
 
         const videoElement = document.createElement('div');
-        videoElement.setAttribute('class', 'col col-4 col-md-10');
+        videoElement.setAttribute('class', 'col col-4 col-md-10 offset-col-md-1');
 
-        //setur poster þar sem þau eiga að vera
-        const videoImage = document.createElement('a');
+        // Setur poster þar sem þau eiga að vera
+        const videoImage = document.createElement('div');
         videoImage.setAttribute('class', 'video_image')
         videoImage.setAttribute('href', '/video.html?id=' + video.id)
         const videoImageImg = document.createElement('img');
@@ -54,7 +54,23 @@ window.onload = function () {
         const bottomCard = document.createElement('div');
         bottomCard.setAttribute('class', 'bottom_card');
 
-        //setur videotitle þar sem þeir eiga að vera
+        // Duration
+        const videoDuration = document.createElement('p');
+        videoDuration.setAttribute('class', 'video_duration col-4');
+
+        const minutes = parseInt(video.duration / 60, 10);
+
+        const seconds = video.duration % 60;
+
+        if (seconds <= 9 ) {
+          videoDuration.innerHTML = `${parseInt(minutes)}:0${parseInt(seconds)}`;
+        } else {
+          videoDuration.innerHTML = `${parseInt(minutes)}:${parseInt(seconds)}`;
+        }
+
+        videoImage.appendChild(videoDuration);
+
+        // Setur videotitle þar sem þeir eiga að vera
         const videoTitle = document.createElement('p');
         videoTitle.setAttribute('class', 'video_title');
         videoTitle.innerHTML = video.title;
@@ -62,19 +78,37 @@ window.onload = function () {
 
         const detailElement = document.createElement('p');
 
-        //dagsetningar:)
+        // Dagsetningar
         const videoDate = new Date(video.created);
         const hoursSince = ((new Date()).getTime() - videoDate.getTime()) / 1000 / 60 / 60;
         const daysSince = hoursSince / 24
         const monthsSince = daysSince / 30;
-        if (monthsSince >= 1) {
-          detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuðum síðan`;
-        } else if (daysSince >= 1) {
-          detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} dögum síðan`;
-        } else {
-          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustundum síðan
+        const yearSince = daysSince / 365;
 
-          `;
+        if (monthsSince >= 1) {
+          if (monthsSince < 2) {
+            detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuði síðan`;
+          } else{
+            detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuðum síðan`;
+          }
+        } else if (daysSince >= 1) {
+          if (daysSince < 2) {
+            detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} degi síðan`;
+          } else {
+            detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} dögum síðan`;
+          }
+        } else if (hoursSince >= 1){
+          if (hoursSince < 2) {
+          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustund síðan`;
+          } else {
+          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustundum síðan`;
+          }
+        } else {
+          if (yearSince < 2) {
+            detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} ári síðan`;
+          } else {
+            detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} árum síðan`;
+          }
         }
 
         bottomCard.appendChild(detailElement);
@@ -84,7 +118,7 @@ window.onload = function () {
         videosElement.appendChild(videoElement);
 
       }
-      //setur hr á milli categories
+      // Setur hr á milli categories
       categoryElement.appendChild(videosElement);
 
       const hr = document.createElement('hr');

@@ -6,6 +6,8 @@
 
 h1{
   text-align: center;
+  padding-top: 15px;
+  font-size: 41px;
 }
 
   .row {
@@ -46,6 +48,45 @@ h1{
     margin-left: 8.333333333%;
   }
 
+  @media only screen and (max-width: 500px) {
+    .col-md-1 {
+      width: 8.333333333%;
+    }
+
+    .col-md-2 {
+      width: 16.66666667%;
+    }
+
+    .col-md-3 {
+      width: 25%;
+    }
+
+    .col-md-4 {
+      width: 33.33333%;
+    }
+
+    .col-md-10{
+      width: 83.33333333%;
+    }
+
+    .offset-col-md-1 {
+      margin-left: 8.333333333%;
+    }
+    .offset-col-md-2 {
+      margin-left: 16.66666667%;
+    }
+
+    hr {
+      max-width: 22rem;
+    }
+
+    .video_duration {
+      bottom: 9px;
+      left: 363px;
+    }
+
+  }
+
   /*
 Global stílar
 */
@@ -70,7 +111,8 @@ h1 {
 
 h2 {
   hyphens: manual;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  padding-top: 4px;
 }
 
 .row {
@@ -79,11 +121,14 @@ h2 {
 
 .video_title {
   font-weight: bold;
+  width: 26rem;
+  line-height: 1.5rem;
+  margin-top: 10px;
 }
 
 hr {
   margin: 0 auto;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 
@@ -92,20 +137,34 @@ footer p{
     margin-bottom: 2rem;
 }
 
-.video_image img {
+img {
+  position: relative;
+  display: flex;
+  width: 26rem;
+  height: auto;
+}
+
+.video_image {
+  position: relative;
+  display: flex;
   width: 90%;
   height: auto;
 }
-.video_image video{
-  width: 100%;
+
+.video_duration {
+  position: absolute;
+  background: rgba(95,95,95, 0.7);
+  text-align: center;
+  color: #dddddd;
+  width: 13%;
+  padding: 2px;
+  bottom: 9px;
+  left: 363px;
 }
-.video_button img{
-  width: 50px;
-  margin: 0em 0.5em;
+
+@media only screen and (max-width: 500px) {
+
+
 }
-.video_controler{
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
-}
+
 
