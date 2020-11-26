@@ -111,8 +111,10 @@ h1 {
 
 h2 {
   hyphens: manual;
-  margin-bottom: 10px;
-  padding-top: 4px;
+  margin-bottom: 2rem;
+  padding-top: 4rem;
+  font-size: 2rem;
+  font-weight: bolder;
 }
 
 .row {
@@ -131,6 +133,12 @@ hr {
   margin-bottom: 30px;
 }
 
+.line {
+  background-color: #222222;
+  text-align: center;
+  height: 1px;
+  margin: 2rem 0;
+}
 
 footer p{
     text-align: center;
