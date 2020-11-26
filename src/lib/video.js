@@ -14,6 +14,7 @@ function videoPlayPause() {
   else {
     myVideo.pause();
     document.getElementById("play_pause").src="img/play.svg";
+    document.getElementById("playBtn").classList.remove("playtBtn-hidden");
   }
 }
 function videoMute(){
@@ -153,8 +154,5 @@ window.onload = function () {
           videoRelatedElement.appendChild(videoRelatedBottom)
           relatedVideoGrid.appendChild(videoRelatedElement)
         }
-        let realatedVideoLine = document.createElement('hr')
-        realatedVideoLine.setAttribute('class','col-10')
-        relatedVideoGrid.appendChild(realatedVideoLine)
     }
     )}

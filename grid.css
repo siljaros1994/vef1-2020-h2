@@ -109,8 +109,10 @@ h1 {
 
 h2 {
   hyphens: manual;
-  margin-bottom: 10px;
-  padding-top: 4px;
+  margin-bottom: 2rem;
+  padding-top: 4rem;
+  font-size: 2rem;
+  font-weight: bolder;
 }
 
 .video_title {
@@ -130,9 +132,36 @@ footer{
   margin-bottom: 2rem;
 }
 
+.line {
+  background-color: #222222;
+  text-align: center;
+  height: 1px;
+  margin: 2rem 0;
+}
+
+.playBtn {
+  top: 25%;
+  right: 45%;
+  position: absolute;
+  display: flex;
+  height: 10%;
+  width: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.playtBtn-hidden {
+  display: none;
+}
+
 footer a {
   color: black;
   text-decoration: none;
+}
+
+.video_image_pc {
+  height: 100%;
+  width: 100%;
 }
 
 .video_image img {
