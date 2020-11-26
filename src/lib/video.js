@@ -1,21 +1,21 @@
 const urlParams = new URLSearchParams(window.location.search);
 const myId = urlParams.get('id');
-var myVideo = document.getElementById("videoToPlay"); 
+var myVideo = document.getElementById("videoToPlay");
 
 function videoBack(){
   var timeCurrent = myVideo.currentTime - 30;
   myVideo.currentTime = timeCurrent;
 }
-function videoPlayPause() { 
+function videoPlayPause() {
   if (myVideo.paused) {
     myVideo.play();
-    document.getElementById("play_pause").src="img/pause.svg"; 
+    document.getElementById("play_pause").src="img/pause.svg";
   }
   else {
-    myVideo.pause(); 
+    myVideo.pause();
     document.getElementById("play_pause").src="img/play.svg";
   }
-} 
+}
 function videoMute(){
   if(myVideo.muted ==false){
     myVideo.muted =true;
@@ -77,7 +77,7 @@ window.onload = function () {
         const relatedVideoGrid = document.getElementById('tengd_myndbond')
 
         for(let i = 0; i < videoInfo.related.length; i++){
-          
+
           const relatedVideoNumber = videoInfo.related[i];
           let relatedVideo = gögn.videos[relatedVideoNumber];
           // býr til div og klasa fyrir skölun
@@ -93,6 +93,23 @@ window.onload = function () {
           // býr til div fyir bottom cardið
           let videoRelatedBottom = document.createElement('div');
           videoRelatedBottom.setAttribute('class','bottom_card');
+
+          // Duration
+          const videoRelatedDuration = document.createElement('p');
+          videoRelatedDuration.setAttribute('class', 'video_duration col-4');
+
+          const minutes = parseInt(relatedVideo.duration / 60, 10);
+
+          const seconds = relatedVideo.duration % 60;
+
+          if (seconds <= 9 ) {
+            videoRelatedDuration.innerHTML = `${parseInt(minutes)}:0${parseInt(seconds)}`;
+          } else {
+            videoRelatedDuration.innerHTML = `${parseInt(minutes)}:${parseInt(seconds)}`;
+          }
+
+          videoRelatedBottom.appendChild(videoRelatedDuration);
+
           //  Titill á tengdum myndböndum
           let videoRelatedTitle = document.createElement('h3');
           videoRelatedTitle.innerHTML = relatedVideo.title;
@@ -103,13 +120,33 @@ window.onload = function () {
           let hoursSince = ((new Date()).getTime() - videoDate.getTime()) / 1000 / 60 / 60;
           let daysSince = hoursSince / 24
           let monthsSince = daysSince / 30;
-          if (monthsSince >= 1) {
+          const yearSince = daysSince / 365;
+
+        if (monthsSince >= 1) {
+          if (monthsSince < 2) {
+            detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuði síðan`;
+          } else{
             detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuðum síðan`;
-          } else if (daysSince >= 1) {
-            detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} dögum síðan`;
-          } else {
-            detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustundum síðan`;
           }
+        } else if (daysSince >= 1) {
+          if (daysSince < 2) {
+            detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} degi síðan`;
+          } else {
+            detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} dögum síðan`;
+          }
+        } else if (hoursSince >= 1){
+          if (hoursSince < 2) {
+          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustund síðan`;
+          } else {
+          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustundum síðan`;
+          }
+        } else {
+          if (yearSince < 2) {
+            detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} ári síðan`;
+          } else {
+            detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} árum síðan`;
+          }
+        }
           videoRelatedBottom.appendChild(detailElement);
           videoRelatedClass.appendChild(videoRelatedImage)
           videoRelatedElement.appendChild(videoRelatedClass)
