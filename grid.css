@@ -183,14 +183,14 @@ footer p{
 }
 
 .video_duration {
-  position: absolute;
+  position: relative;
   background: rgba(95,95,95, 0.7);
   text-align: center;
   color: #dddddd;
   width: 13%;
   padding: 2px;
-  bottom: 9px;
-  left: 363px;
+  bottom: 13%;
+  left: 75%;
 }
 
 @media only screen and (max-width: 500px) {
