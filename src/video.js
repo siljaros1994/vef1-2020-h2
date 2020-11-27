@@ -95,6 +95,18 @@ window.onload = function () {
           // býr til div fyir bottom cardið
           let videoRelatedBottom = document.createElement('div');
           videoRelatedBottom.setAttribute('class','bottom_card');
+          const videoRelatedDuration = document.createElement('p');
+          // Duration
+          videoRelatedDuration.setAttribute('class', 'video_duration col-4');
+          const minutes = parseInt(relatedVideo.duration / 60, 10);
+          const seconds = relatedVideo.duration % 60;
+
+          if (seconds <= 9 ) {
+            videoRelatedDuration.innerHTML = `${parseInt(minutes)}:0${parseInt(seconds)}`;
+          } else {
+            videoRelatedDuration.innerHTML = `${parseInt(minutes)}:${parseInt(seconds)}`;
+          }
+          videoRelatedBottom.appendChild(videoRelatedDuration);
           //  Titill á tengdum myndböndum
           let videoRelatedTitle = document.createElement('h3');
           videoRelatedTitle.innerHTML = relatedVideo.title;
@@ -119,8 +131,5 @@ window.onload = function () {
           videoRelatedElement.appendChild(videoRelatedBottom)
           relatedVideoGrid.appendChild(videoRelatedElement)
         }
-        /*let realatedVideoLine = document.createElement('hr')
-        realatedVideoLine.setAttribute('class','col-10')
-        relatedVideoGrid.appendChild(realatedVideoLine)*/
     }
     )}
