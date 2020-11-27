@@ -12,7 +12,7 @@ Verkefnið er skipt upp í möppurnar:
 * `fyrirmyndir/` - Gefnar fyrirmyndir
 * `img/` - Myndir sem notaðar eru á vefsíðu
 * `src/` - Inniheldur `index.js` sem vísar í `lib/` ásamt undirmöppunni `lib/` sem inniheldur JavaScript kóða
-* `styles/` -  `.scss`skrár sem eru þýddar og sameinaðar yfir í `styles.scss`
+* `styles/` -  `.scss`skrár sem eru síðan þýddar og sameinaðar yfir í `styles.scss`
 * `videos/` - Myndbönd á vefsíðu
 
 
