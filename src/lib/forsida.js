@@ -1,4 +1,3 @@
-
 // Nær í videos.json og keyrir callback fall
 function getData(callback) {
   fetch('/videos.json')

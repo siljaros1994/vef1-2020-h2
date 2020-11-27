@@ -187,14 +187,14 @@ footer a {
 }
 
 .video_duration {
-  position: relative;
+  position: absolute;
   background: rgba(95,95,95, 0.7);
   text-align: center;
   color: #dddddd;
   width: 46px;
   padding: 2px;
-  bottom: 12%;
-  left: 85%;
+  margin-left: 367px;
+  margin-top: -2rem;
 }
 
 
