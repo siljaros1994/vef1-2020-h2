@@ -12,22 +12,25 @@ function getData(callback) {
 
 const urlParams = new URLSearchParams(window.location.search);
 const myId = urlParams.get('id');
-var myVideo = document.getElementById("videoToPlay"); 
+var myVideo = document.getElementById("videoToPlay");
+
 
 function videoBack(){
   var timeCurrent = myVideo.currentTime - 3;
   myVideo.currentTime = timeCurrent;
 }
-function videoPlayPause() { 
+function videoPlayPause() {
   if (myVideo.paused) {
     myVideo.play();
-    document.getElementById("play_pause").src="img/pause.svg"; 
+    document.getElementById("play_pause").src="img/pause.svg";
+    document.getElementById("playBtn").classList.add("playtBtn-hidden");
   }
   else {
-    myVideo.pause(); 
+    myVideo.pause();
     document.getElementById("play_pause").src="img/play.svg";
+    document.getElementById("playBtn").classList.remove("playtBtn-hidden");
   }
-} 
+}
 function videoMute(){
   if(myVideo.muted ==false){
     myVideo.muted =true;
@@ -76,7 +79,7 @@ window.onload = function () {
         const relatedVideoGrid = document.getElementById('tengd_myndbond')
 
         for(let i = 0; i < videoInfo.related.length; i++){
-          
+
           const relatedVideoNumber = videoInfo.related[i];
           const relatedVideo = gögn.videos[relatedVideoNumber];
           // býr til div og klasa fyrir skölun
@@ -116,8 +119,8 @@ window.onload = function () {
           videoRelatedElement.appendChild(videoRelatedBottom)
           relatedVideoGrid.appendChild(videoRelatedElement)
         }
-        let realatedVideoLine = document.createElement('hr')
+        /*let realatedVideoLine = document.createElement('hr')
         realatedVideoLine.setAttribute('class','col-10')
-        relatedVideoGrid.appendChild(realatedVideoLine)
+        relatedVideoGrid.appendChild(realatedVideoLine)*/
     }
     )}
