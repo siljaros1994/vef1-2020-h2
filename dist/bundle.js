@@ -65,14 +65,27 @@
           var videoDate = new Date(video.created);
           var hoursSince = (new Date().getTime() - videoDate.getTime()) / 1000 / 60 / 60;
           var daysSince = hoursSince / 24;
+          var weekSince = daysSince / 7;
           var monthsSince = daysSince / 30;
           var yearSince = daysSince / 365;
 
-          if (monthsSince >= 1) {
+          if (yearSince >= 1) {
+            if (yearSince < 2) {
+              detailElement.innerHTML = "Fyrir ".concat(parseInt(yearSince), " \xE1ri s\xED\xF0an");
+            } else {
+              detailElement.innerHTML = "Fyrir ".concat(parseInt(yearSince), " \xE1rum s\xED\xF0an");
+            }
+          } else if (monthsSince >= 1) {
             if (monthsSince < 2) {
               detailElement.innerHTML = "Fyrir ".concat(parseInt(monthsSince), " m\xE1nu\xF0i s\xED\xF0an");
             } else {
               detailElement.innerHTML = "Fyrir ".concat(parseInt(monthsSince), " m\xE1nu\xF0um s\xED\xF0an");
+            }
+          } else if (weekSince >= 1) {
+            if (weekSince < 2) {
+              detailElement.innerHTML = "Fyrir ".concat(parseInt(weekSince), " viku s\xED\xF0an");
+            } else {
+              detailElement.innerHTML = "Fyrir ".concat(parseInt(weekSince), " vikum s\xED\xF0an");
             }
           } else if (daysSince >= 1) {
             if (daysSince < 2) {
@@ -85,12 +98,6 @@
               detailElement.innerHTML = "Fyrir ".concat(parseInt(hoursSince), " klukkustund s\xED\xF0an");
             } else {
               detailElement.innerHTML = "Fyrir ".concat(parseInt(hoursSince), " klukkustundum s\xED\xF0an");
-            }
-          } else {
-            if (yearSince < 2) {
-              detailElement.innerHTML = "Fyrir ".concat(parseInt(yearSince), " \xE1ri s\xED\xF0an");
-            } else {
-              detailElement.innerHTML = "Fyrir ".concat(parseInt(yearSince), " \xE1rum s\xED\xF0an");
             }
           }
 
