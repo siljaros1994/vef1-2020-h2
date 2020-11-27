@@ -1,1 +1,1 @@
-// import { getData } from './lib/forsida';
+import {} from './lib/forsida.js';

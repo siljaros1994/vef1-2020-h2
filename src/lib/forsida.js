@@ -1,14 +1,4 @@
-// Nær í videos.json og keyrir callback fall
-function getData(callback) {
-  fetch('/videos.json')
-    .then(function (res) {
-      return res.json()
-    })
-    .then(data => {
-      callback(data);
-    })
-    .catch(console.log)
-}
+import {getData} from '../lib/getdata.js';
 
 // Kallar á gögn þegar html (document) hefur loadast
 window.onload = function () {
