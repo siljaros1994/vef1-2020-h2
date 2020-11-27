@@ -6,6 +6,7 @@ function videoBack(){
   var timeCurrent = myVideo.currentTime - 30;
   myVideo.currentTime = timeCurrent;
 }
+
 function videoPlayPause() {
   if (myVideo.paused) {
     myVideo.play();
