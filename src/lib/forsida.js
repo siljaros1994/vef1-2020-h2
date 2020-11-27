@@ -1,3 +1,4 @@
+
 // Nær í videos.json og keyrir callback fall
 function getData(callback) {
   fetch('/videos.json')
@@ -43,10 +44,8 @@ window.onload = function () {
         const videoElement = document.createElement('div');
         videoElement.setAttribute('class', 'col col-4 col-md-10 offset-col-md-1');
 
-
         //setur poster þar sem þau eiga að vera
         const videoImage = document.createElement('a');
-
 
         videoImage.setAttribute('class', 'video_image')
         videoImage.setAttribute('href', '/video.html?id=' + video.id)
