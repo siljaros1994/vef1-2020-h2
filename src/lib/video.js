@@ -121,35 +121,42 @@ window.onload = function () {
           let detailElement = document.createElement('p');
           let videoDate = new Date(relatedVideo.created);
           let hoursSince = ((new Date()).getTime() - videoDate.getTime()) / 1000 / 60 / 60;
-          let daysSince = hoursSince / 24
+          let daysSince = hoursSince / 24;
+          let weekSince = daysSince / 7;
           let monthsSince = daysSince / 30;
           const yearSince = daysSince / 365;
 
-        if (monthsSince >= 1) {
-          if (monthsSince < 2) {
-            detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuði síðan`;
-          } else{
-            detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuðum síðan`;
+          if (yearSince >= 1) {
+            if (yearSince < 2) {
+              detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} ári síðan`;
+            } else {
+              detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} árum síðan`;
+            }
+          } else if (monthsSince >= 1) {
+            if (monthsSince < 2) {
+              detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuði síðan`;
+            } else {
+              detailElement.innerHTML = `Fyrir ${parseInt(monthsSince)} mánuðum síðan`;
+            }
+          } else if (weekSince >= 1) {
+            if (weekSince < 2) {
+              detailElement.innerHTML = `Fyrir ${parseInt(weekSince)} viku síðan`;
+            } else {
+              detailElement.innerHTML = `Fyrir ${parseInt(weekSince)} vikum síðan`;
+            }
+          } else if (daysSince >= 1) {
+            if (daysSince < 2) {
+              detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} degi síðan`;
+            } else {
+              detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} dögum síðan`;
+            }
+          } else if (hoursSince >= 1){
+            if (hoursSince < 2) {
+            detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustund síðan`;
+            } else {
+            detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustundum síðan`;
+            }
           }
-        } else if (daysSince >= 1) {
-          if (daysSince < 2) {
-            detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} degi síðan`;
-          } else {
-            detailElement.innerHTML = `Fyrir ${parseInt(daysSince)} dögum síðan`;
-          }
-        } else if (hoursSince >= 1){
-          if (hoursSince < 2) {
-          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustund síðan`;
-          } else {
-          detailElement.innerHTML = `Fyrir ${parseInt(hoursSince)} klukkustundum síðan`;
-          }
-        } else {
-          if (yearSince < 2) {
-            detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} ári síðan`;
-          } else {
-            detailElement.innerHTML = `Fyrir ${parseInt(yearSince)} árum síðan`;
-          }
-        }
           videoRelatedBottom.appendChild(detailElement);
           videoRelatedClass.appendChild(videoRelatedImage)
           videoRelatedElement.appendChild(videoRelatedClass)

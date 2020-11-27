@@ -1,8 +1,10 @@
 # Hópverkefni 2
 
+## Lýsing
+
 Verkefnið felst í því að smíða vef lítinn myndbandavef sem nýtir gögn úr JSON skrá.
 
-Gögn skulu lesin úr `videos.json` skjali sem gefið er og engar upplýsingar skulu „harðkóðaðar“ í HTML. Birta skal skilaboð á meðan gögn eru hlaðin. Athugið að ef þetta væri „alvöru“ verkefni værum við með bakenda sem myndi sjá um að skrifa út rétt gögn í HTML í byrjun.
+Gögn skulu lesin úr `videos.json` skjali sem gefið er og engar upplýsingar skulu „harðkóðaðar“ í HTML. Birta skal skilaboð á meðan gögn eru hlaðin. 
 
 Uppbygging á `videos.json` er hlutur sem inniheldur:
 
@@ -20,6 +22,10 @@ Uppbygging á `videos.json` er hlutur sem inniheldur:
   - `videos`, fylki af vísunum í myndband að ofan, þau myndband sem eru í flokk
 
 Undir `gogn/videos` eru prufumyndband ásamt plakötum sem vísað er í.
+
+Uppsetning verkefnis:
+
+bla
 
 ## Myndbandalisti
 
@@ -67,12 +73,6 @@ Setja skal upp þau tæki og tól sem notuð hafa verið í námskeiðinu:
 
 Þegar verkefni er metið er `npm install` keyrt fyrst, síðan `npm run dev` á að keyra upp verkefni og opna vafra glugga, að lokum `npm test` sem á að keyra eslint og stylelint, og sýna engar villur.
 
-## Hópavinna
-
-Verkefnið skal unnið í hóp með 3-4 einstaklingum. Hafið samband við kennara ef ekki er mögulegt að vinna í hóp. Hægt er að leita að félögum á slack á rásinni #2020-v1-vantar-hop
-
-Notast skal við Git og GitHub. Engar zip skrár með kóða ættu að ganga á milli í hópavinnu, heldur á að „committa“ allan kóða og vinna gegnum Git.
-
 ## Lýsing á verkefni
 
 `README.md` skrá skal vera í rót verkefnis og innihalda:
@@ -92,38 +92,10 @@ Setja skal upp Sass og stylelint með `stylelint-config-sass-guidelines` og `sty
 
 Til að passa upp á samræmi eru skrárnar `.gitignore`, `.gitattributes` og `.editorconfig` gefnar.
 
-## Mat
+## Meðlimir
 
-* 10% - `README` eftir forskrift, tæki og tól uppsett
-* 10% – Skalanlegt útlit sem fylgir fyrirmynd
-* 20% – Sass/CSS og JavaScript snyrtilegt og án lint villa þegar `npm run lint -s` er keyrt
-* 20% – Gögn sótt úr `videos.json`
-* 20% – Virkni fyrir myndbandalista
-* 20% – Virkni fyrir myndband
+* Heba Sólveig Heimisdóttir (hsh58@hi.is), GitHub notendanöfn: hebasolveig
+* Andrea
+* Sammi
+* Silja
 
-## Sett fyrir
-
-Verkefni sett fyrir í fyrirlestri mánudaginn 5. október 2020.
-
-## Skil
-
-Einn aðili úr hóp skal skila fyrir hönd allra og skila skal í Canvas í seinasta lagi 27. nóvember.
-
-Skil skulu innihalda:
-
-* Nöfn allra í hóp ásamt notendanafni
-* Skilaboð skulu innihalda slóð á GitHub repo fyrir verkefni, og dæmatímakennurum skal hafa verið boðið í repo ([sjá leiðbeiningar](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)). Notendanöfn þeirra eru:
-  * `GaddiSunshine`
-  * `boxandri`
-  * `StimmiKex`
-  * `jonnigs`
-  * `Tobbasn`
-  * `thth168`
-
-## Einkunn
-
-Sett verða fyrir tíu minni verkefni þar sem átta bestu gilda 5% hvert, samtals 40% af lokaeinkunn.
-
-Sett verða fyrir tvö hópverkefni þar sem hvort um sig gildir 10%, samtals 20% af lokaeinkunn.
-
-> Útgáfa 0.1

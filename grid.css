@@ -188,7 +188,7 @@ footer a {
 
 .video_duration {
   position: absolute;
-  background: rgba(95,95,95, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   text-align: center;
   color: #dddddd;
   width: 46px;
