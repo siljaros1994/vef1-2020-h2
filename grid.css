@@ -9,7 +9,7 @@
   flex-wrap: wrap;
   margin-left: -10px;
   margin-right: -10px;
-  margin-bottom: 24px;
+  /*margin-bottom: 24px;*/
 }
 
 .col {
@@ -110,7 +110,7 @@ h1 {
 h2 {
   hyphens: manual;
   margin-bottom: 2rem;
-  padding-top: 4rem;
+  padding-top: 1rem;
   font-size: 2rem;
   font-weight: bolder;
 }
@@ -125,6 +125,7 @@ h2 {
 hr {
   margin: 0 auto;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 footer{
@@ -164,6 +165,10 @@ footer a {
   width: 100%;
 }
 
+#videoToPlay{
+  width: inherit;
+}
+
 .video_image img {
   width: 100%;
   height: auto;
@@ -179,13 +184,6 @@ footer a {
   display: flex;
   justify-content: center;
   margin-top: 2em;
-}
-
-img {
-  position: relative;
-  display: flex;
-  width: 26rem;
-  height: auto;
 }
 
 .video_duration {
