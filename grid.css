@@ -142,13 +142,11 @@ footer{
 
 .playBtn {
   top: 25%;
-  right: 45%;
   position: absolute;
-  display: flex;
-  height: 10%;
   width: 10%;
-  align-items: center;
-  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .playtBtn-hidden {
@@ -163,6 +161,8 @@ footer a {
 .video_image_pc {
   height: 100%;
   width: 100%;
+  position: relative;
+  text-align: center;
 }
 
 #videoToPlay{
