@@ -39,5 +39,7 @@
     "rollup": "^2.33.3",
     "rollup-plugin-babel": "^4.4.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
 }
